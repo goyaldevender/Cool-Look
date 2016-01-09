@@ -86,7 +86,12 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         switch(id) {
-            case R.id.action_settings:
+            case R.id.action_sms:
+                Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
+                smsIntent.putExtra("address", "9650032043");// Send the message to multiple recipient.
+                smsIntent.putExtra("sms_body", "Hello,Please provide me more information regarding the products that you have.");
+                smsIntent.setType("vnd.android-dir/mms-sms");
+                startActivity(smsIntent);
                 return true;
             case R.id.action_website:
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(webUrl));

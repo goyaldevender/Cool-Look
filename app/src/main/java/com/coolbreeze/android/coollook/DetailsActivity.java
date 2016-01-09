@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.NumberFormat;
+import java.util.Locale;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class DetailsActivity extends AppCompatActivity {
         TextView descView = (TextView) findViewById(R.id.descriptionText);
         descView.setText(product.getDescription());
 
-        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
         String price = formatter.format(product.getPrice());
         TextView priceText = (TextView) findViewById(R.id.priceText);
         priceText.setText(price);
@@ -56,7 +57,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private Bitmap getBitmapFromAsset(String productId) {
         AssetManager assetManager = getAssets();
-        InputStream stream = null;
+        InputStream stream;
 
         try {
             stream = assetManager.open(productId + ".png");
