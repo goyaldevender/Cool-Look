@@ -17,10 +17,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final String PRODUCT_ID = "PRODUCT_ID";
-    private List<Product> products = DataProvider.productList;
     private static String webUrl = "https://www.facebook.com/Clothes.eg/";
     private static String email = "goyaldevender@gmail.com";
-    private static String callNumber = "+91-9650030243";
+    private static String callNumber = "+919650030243";
+    private List<Product> products = DataProvider.productList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 return true;
             case R.id.action_call_us:
-                Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse(callNumber));
+                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + callNumber));
                 if (callIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(callIntent);
                 }

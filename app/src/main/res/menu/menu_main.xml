@@ -19,8 +19,8 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_call_us"
-        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_call_us"
+        android:orderInCategory="0"
         android:title="@string/action_call_us"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_call_us"/>
+        app:showAsAction="always" />
 </menu>
