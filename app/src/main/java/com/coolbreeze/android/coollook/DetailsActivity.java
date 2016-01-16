@@ -26,6 +26,8 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setTitle(getString(R.string.Details));
+
         String productId = getIntent().getStringExtra(MainActivity.PRODUCT_ID);
         Product product = DataProvider.productMap.get(productId);
 
